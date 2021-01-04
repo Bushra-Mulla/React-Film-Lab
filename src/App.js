@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-
+import FilmDetails from './components/FilmDetails'
+import FilmListing from './components/FilmListing '
 function App() {
   return (
     <div className="film-library">
