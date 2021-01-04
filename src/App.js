@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
-import FilmDetails from './components/FilmDetails'
-import FilmListing from './components/FilmListing '
+import FilmDetails from "./components/FilmDetails";
+import FilmListing from "./components/FilmListing ";
+import TMDB from "./TMDB";
 function App() {
   return (
     <div className="film-library">
