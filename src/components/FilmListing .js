@@ -22,7 +22,7 @@ export default class FilmListing extends Component {
             onClick={() => this.handleFilterClick("FAVES")}
           >
             FAVES
-            <span>{this.props.films.length}</span>
+            {/* <span>{this.props.films.length}</span> */}
           </div>
         </div>
         <FilmRow films={this.props.films} />

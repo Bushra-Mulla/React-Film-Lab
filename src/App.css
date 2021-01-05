@@ -7,7 +7,6 @@ body {
 .poster {
   /* width: 100px; */
   height: 150px;
-  display: block;
 }
 .film-row {
   background-color: white;
@@ -20,8 +19,8 @@ body {
 }
 .film-summary {
   position: absolute;
-  display: inline;
-  font-size: 90%;
+  display: block;
+  /* font-size: 90%; */
   text-align: center;
 }
 .section-title {
