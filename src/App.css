@@ -6,19 +6,23 @@ body {
 }
 .poster {
   /* width: 100px; */
-  height: 180px;
-  position: absolute;
+  height: 150px;
   display: block;
 }
 .film-row {
   background-color: white;
   width: 350px;
-  height: 180px;
-  margin-bottom: 3px;
+  height: 150px;
+  margin-bottom: 4px;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.film-summary {
+  position: absolute;
+  display: inline;
+  font-size: 90%;
   text-align: center;
-  position: relative;
-  display: inline-block;
-  font-size: 100%;
 }
 .section-title {
   background-color: gray;
@@ -26,4 +30,6 @@ body {
   width: 350px;
   font-size: 18px;
   text-align: center;
+}
+.film-row-fave {
 }
