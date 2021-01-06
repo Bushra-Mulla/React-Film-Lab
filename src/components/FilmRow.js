@@ -6,8 +6,11 @@ export default class FilmRow extends Component {
     console.log(film.overview);
     console.log(film.title);
   };
+
+
   render() {
-    const filmRows = this.props.films.map((film) => {
+
+    const filmRows = this.props.films.map((film)=>{
       return (
         <div
           className="film-row"
@@ -19,7 +22,10 @@ export default class FilmRow extends Component {
             <h1>{film.title}</h1>
             <p>{new Date(film.release_date).getFullYear()}</p>
           </div>
-          <Fave />
+          <Fave
+            onFaveToggle={this.props.onFaveToggle(film)}
+            isFave={this.props.faves.includes(film)}
+          />
         </div>
       );
     });

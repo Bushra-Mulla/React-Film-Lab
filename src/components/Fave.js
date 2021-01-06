@@ -1,21 +1,14 @@
 import React, { Component } from "react";
 import material_icons from "material-icons";
 export default class Fave extends Component {
-  constructor(props) {
-    super();
-    this.state = {
-      isFave: false,
-    };
-  }
   handleClick = (e) => {
-    e.preventDefault();
-    console.log("handling Fave click");
-    this.setState((prevState) => ({ isFave: !prevState.isFave }));
     e.stopPropagation();
+    console.log("handling Fave click");
+    this.props.onFaveToggle(e);
   };
 
   render() {
-    const isFave = this.state.isFave ? `remove_from_queue` : `add_to_queue`;
+    const isFave = this.props.isFave ? `remove_from_queue` : `add_to_queue`;
 
     return (
       <div
@@ -23,7 +16,6 @@ export default class Fave extends Component {
         onClick={(e) => this.handleClick(e)}
       >
         <p className="material-icons">{isFave}</p>
-        {/* //change it to img later */}
       </div>
     );
   }

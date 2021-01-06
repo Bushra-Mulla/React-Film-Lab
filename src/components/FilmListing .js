@@ -14,7 +14,18 @@ export default class FilmListing extends Component {
   render() {
     const isAllActive = this.state.filter === "All" ? "is-active" : "";
     const isFavesActive = this.state.filter === "faves" ? "is-active" : "";
-
+   
+    const allFilms = this.props.films.map((film) => {
+      return (
+        <FilmRow
+          films={film}
+          kay={film.id}
+          onFaveToggle={() => this.props.onFaveToggle(film)}
+          isFave={this.props.faves.includes(film)}
+        />
+      );
+    });
+    
     return (
       <div className="film-list">
         <h1 className="section-title">Films {}</h1>
@@ -34,7 +45,7 @@ export default class FilmListing extends Component {
             {/* <span>{this.props.films.length}</span> */}
           </div>
         </div>
-        <FilmRow films={this.props.films} />
+        {allFilms}
       </div>
     );
   }
