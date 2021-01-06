@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import material_icons from "material-icons";
 export default class Fave extends Component {
   constructor(props) {
     super();
@@ -15,7 +15,7 @@ export default class Fave extends Component {
   };
 
   render() {
-    const isFave = this.state.isFave ? "remove_from_queue" : "add_to_queue";
+    const isFave = this.state.isFave ? `remove_from_queue` : `add_to_queue`;
 
     return (
       <div
@@ -23,6 +23,7 @@ export default class Fave extends Component {
         onClick={(e) => this.handleClick(e)}
       >
         <p className="material-icons">{isFave}</p>
+        {/* //change it to img later */}
       </div>
     );
   }
