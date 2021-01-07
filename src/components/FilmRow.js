@@ -7,28 +7,20 @@ export default class FilmRow extends Component {
     console.log(film.title);
   };
 
-
   render() {
-
-    const filmRows = this.props.films.map((film)=>{
-      return (
-        <div
-          className="film-row"
-          key={film.id}
-          onClick={() => this.handleDetailsClick(film)}
-        >
-          <FilmPoster images={film.poster_path} />
-          <div className="film-summary">
-            <h1>{film.title}</h1>
-            <p>{new Date(film.release_date).getFullYear()}</p>
-          </div>
-          <Fave
-            onFaveToggle={this.props.onFaveToggle(film)}
-            isFave={this.props.faves.includes(film)}
-          />
+    const film = this.props.films;
+    return (
+      <div className="film-row" onClick={() => this.handleDetailsClick(film)}>
+        <FilmPoster images={this.props.films.poster_path} />
+        <div className="film-summary">
+          <h1>{film.title}</h1>
+          <p>{new Date(film.release_date).getFullYear()}</p>
         </div>
-      );
-    });
-    return <div className="film-row">{filmRows}</div>;
+        <Fave
+          onFaveToggle={this.props.onFaveToggle(film)}
+          // isFave={this.props.faves.includes(film)}
+        />
+      </div>
+    );
   }
 }
