@@ -2,33 +2,100 @@ body {
   background-color: rgb(236, 235, 235);
 }
 .App {
-  text-align: center;
 }
 .poster {
-  /* width: 100px; */
-  height: 150px;
+  margin: 0;
+  border-radius: 2px;
+  width: auto;
+  max-height: 150px;
+  display: block;
+}
+.film-library {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  justify-content: space-around;
+}
+.film-list {
+  position: relative;
+  overflow-y: scroll;
+  left: 0;
+  top: 60px;
+}
+.film-details {
+  width: 70%;
 }
 .film-row {
   background-color: white;
-  width: 350px;
-  height: 150px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   margin-bottom: 4px;
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  width: 100%;
+  max-height: 150px;
+}
+
+.film-row:active {
+  background-color: rgb(222, 223, 223);
 }
 .film-summary {
-  position: absolute;
-  display: block;
-  /* font-size: 90%; */
+  font-size: 12px;
   text-align: center;
+  align-items: center;
 }
 .section-title {
+  position: fixed;
   background-color: gray;
   color: white;
-  width: 350px;
   font-size: 18px;
   text-align: center;
+  top: 0;
+  margin: 0;
+  width: 50%;
+  padding: 3px;
+}
+.film-list-filters {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 33%;
+}
+.film-list-filter {
+  flex-basis: 50%;
+  flex-grow: 1;
+  background-color: #ccc;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 3px;
+  margin: 0 0 0.1em;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 .film-row-fave {
+  position: absolute;
+  right: 5px;
+  padding-top: 15%;
+  background-color: transparent;
+  align-items: center;
+}
+.film-row-fave.remove_from_queue {
+  background-color: rgba(32, 178, 170, 0.75);
+}
+.film-list-filter:hover {
+  background-color: hsl(177, 70%, 46%);
+}
+.film-list-filter.is-active {
+  background-color: lightseagreen;
+}
+
+.section-count {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 3px;
+  margin-left: 0.5em;
+  font-weight: bold;
 }

@@ -8,18 +8,28 @@ import TMDB from "./TMDB";
 export default class App extends Component {
   constructor(props) {
     super();
+    this.handleFaveToggle = this.handleFaveToggle.bind(this);
+
     this.state = {
       films: TMDB.films,
       faves: [],
       current: {},
     };
-    this.handleFaveToggle = this.handleFaveToggle.bind(this);
   }
-  handleFaveToggle = (film) => {
+  handleFaveToggle = (film, e) => {
     const faves = this.state.faves.slice();
     const filmIndex = faves.indexOf(film);
     filmIndex == -1 ? faves.push(film) : faves.splice(filmIndex, 1);
     this.setState({ faves });
+    console.log(this.state.faves);
+    // e.stopPropagation();
+  };
+  handleDetailsClick = (film) => {
+    const current = film.overview;
+    console.log(film.title);
+    console.log(film.overview);
+
+    this.setState({ current });
   };
   render() {
     return (
@@ -28,9 +38,10 @@ export default class App extends Component {
           <FilmListing
             films={this.state.films}
             faves={this.state.faves}
-            onFaveToggle={() => this.handleFaveToggle}
+            onFaveToggle={this.handleFaveToggle}
+            Details={this.handleDetailsClick}
           />
-          <FilmDetails films={this.state.films} current={this.state.current} />
+          <FilmDetails films={this.state.current} />
         </div>
       </div>
     );
