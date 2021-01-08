@@ -1,6 +1,8 @@
 body {
   background-color: rgb(236, 235, 235);
+  height: 100%;
 }
+
 .App {
 }
 .poster {
@@ -11,6 +13,7 @@ body {
   display: block;
 }
 .film-library {
+  position: relative;
   display: flex;
   width: 100%;
   align-items: stretch;
@@ -22,8 +25,10 @@ body {
   left: 0;
   top: 60px;
 }
+
 .film-details {
   width: 70%;
+  text-align: center;
 }
 .film-row {
   background-color: white;
@@ -52,6 +57,9 @@ body {
   margin: 0;
   width: 50%;
   padding: 3px;
+}
+.film-list > .section-title {
+  left: 0;
 }
 .film-list-filters {
   position: fixed;
@@ -98,4 +106,50 @@ body {
   padding: 3px;
   margin-left: 0.5em;
   font-weight: bold;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+figure {
+  margin: 0;
+}
+.film-details {
+  position: relative;
+  margin: 0;
+}
+.film-detail {
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+.film-detail > p {
+  text-align: center;
+  display: block;
+}
+.film-backdrop {
+  position: relative;
+}
+.film-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  color: white;
+  font-size: 64px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
+  padding: 4px 20px;
+}
+.film-detail-poster {
+  float: right;
+  width: 20%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+}
+.film-meta {
+  margin-top: 0;
+  color: white;
+  background-color: lightseagreen;
+  min-height: 100px;
 }

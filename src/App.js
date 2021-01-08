@@ -45,7 +45,7 @@ export default class App extends Component {
             onFaveToggle={this.handleFaveToggle}
             Details={this.handleDetailsClick}
           />
-          <FilmDetails films={this.state.current} />
+          <FilmDetails film={this.state.current} />
         </div>
       </div>
     );
