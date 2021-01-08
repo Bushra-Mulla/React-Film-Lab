@@ -6,11 +6,13 @@ const FilmDetails = (props) => {
   const posterUrl = `https://image.tmdb.org/t/p/w780/${props.film.poster_path}`;
   let details =
     props.film === {} ? (
-      console.log('dd'),
+      (console.log("dd"),
+      (
         <p>
           <i className="material-icons">subscriptions</i>
           <span>No film selected</span>
         </p>
+      ))
     ) : (
       <div className="film-detail is-hydrated">
         <figure className="film-backdrop">

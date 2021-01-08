@@ -33,7 +33,7 @@ export default class FilmListing extends Component {
         <div className="film-list-filters">
           <div
             className={`film-list-filter ${isAllActive}`}
-            onClick={() => this.handleFilterClick("ALL")}
+            onClick={() => this.handleFilterClick("All")}
           >
             ALL
             <span>{this.props.films.length}</span>
